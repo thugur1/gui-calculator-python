@@ -7,7 +7,7 @@ class Calculator:
         self.root.title("Calculator")
         self.root.geometry("400x550")
         self.root.resizable(False, False)
-        self.root.configure(bg="#1e1e1e")
+        self.root.configure(bg="#f5f5f5")
         
         self.expression = ""
         self.input_text = tk.StringVar()
@@ -16,7 +16,7 @@ class Calculator:
     
     def create_widgets(self):
         # Display frame
-        display_frame = tk.Frame(self.root, bg="#1e1e1e", height=100)
+        display_frame = tk.Frame(self.root, bg="#f5f5f5", height=100)
         display_frame.pack(fill="both", pady=20, padx=20)
         
         # Display entry
@@ -24,16 +24,16 @@ class Calculator:
             display_frame,
             textvariable=self.input_text,
             font=("Arial", 28, "bold"),
-            bg="#2d2d2d",
-            fg="#ffffff",
-            bd=0,
+            bg="#ffffff",
+            fg="#000000",
+            bd=2,
             justify="right",
-            relief="flat"
+            relief="solid"
         )
         display.pack(fill="both", expand=True, ipady=20, ipadx=10)
         
         # Buttons frame
-        buttons_frame = tk.Frame(self.root, bg="#1e1e1e")
+        buttons_frame = tk.Frame(self.root, bg="#f5f5f5")
         buttons_frame.pack(fill="both", expand=True, padx=20, pady=(0, 20))
         
         # Button layout
@@ -56,9 +56,10 @@ class Calculator:
                             bg="#4CAF50",
                             fg="#ffffff",
                             font=("Arial", 18, "bold"),
-                            bd=0,
+                            bd=1,
                             cursor="hand2",
-                            activebackground="#45a049"
+                            activebackground="#45a049",
+                            relief="solid"
                         )
                         btn.grid(row=i, column=j, rowspan=1, columnspan=1, sticky="nsew", padx=3, pady=3)
                     elif btn_text in ['C', '←']:
@@ -69,9 +70,10 @@ class Calculator:
                             bg="#FF5252",
                             fg="#ffffff",
                             font=("Arial", 18, "bold"),
-                            bd=0,
+                            bd=1,
                             cursor="hand2",
-                            activebackground="#e04848"
+                            activebackground="#e04848",
+                            relief="solid"
                         )
                         btn.grid(row=i, column=j, sticky="nsew", padx=3, pady=3)
                     elif btn_text in ['/', '*', '-', '+']:
@@ -82,9 +84,10 @@ class Calculator:
                             bg="#FF9800",
                             fg="#ffffff",
                             font=("Arial", 18, "bold"),
-                            bd=0,
+                            bd=1,
                             cursor="hand2",
-                            activebackground="#e68900"
+                            activebackground="#e68900",
+                            relief="solid"
                         )
                         btn.grid(row=i, column=j, sticky="nsew", padx=3, pady=3)
                     else:
@@ -93,12 +96,13 @@ class Calculator:
                                 buttons_frame,
                                 text=btn_text,
                                 command=lambda x=btn_text: self.append_number(x),
-                                bg="#424242",
-                                fg="#ffffff",
+                                bg="#e0e0e0",
+                                fg="#000000",
                                 font=("Arial", 18, "bold"),
-                                bd=0,
+                                bd=1,
                                 cursor="hand2",
-                                activebackground="#333333"
+                                activebackground="#d0d0d0",
+                                relief="solid"
                             )
                             btn.grid(row=i, column=j, columnspan=2, sticky="nsew", padx=3, pady=3)
                         else:
@@ -106,12 +110,13 @@ class Calculator:
                                 buttons_frame,
                                 text=btn_text,
                                 command=lambda x=btn_text: self.append_number(x),
-                                bg="#424242",
-                                fg="#ffffff",
+                                bg="#e0e0e0",
+                                fg="#000000",
                                 font=("Arial", 18, "bold"),
-                                bd=0,
+                                bd=1,
                                 cursor="hand2",
-                                activebackground="#333333"
+                                activebackground="#d0d0d0",
+                                relief="solid"
                             )
                             btn.grid(row=i, column=j, sticky="nsew", padx=3, pady=3)
         
